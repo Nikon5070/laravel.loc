@@ -21,11 +21,25 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="/" class="">Мой блог</a></li>
-                <li><a href="/add" class="">Добавить статью</a></li>
+                <li><a href="/page/add" class="">Добавить статью</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+@if(count($errors) > 0)
+
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>
+                    {{ $error }}
+                </li>
+            @endforeach
+        </ul>
+    </div>
+
+@endif
 
 
 @yield('content')

@@ -16,7 +16,9 @@
                                     <div class="content-title">
                                         <div class="text-center">
                                             <h3>
-                                                <a data-toggle="modal" href="#modal-1" class='previewArticle'
+                                                <a data-toggle="modal"
+                                                   href="{{ route('articleShow',['id' => $article->id]) }}"
+                                                   class='previewArticle'
                                                    data-id="{{ $article->id }}"> {!! $article->title !!}</a>
                                             </h3>
                                             <h5>
@@ -25,6 +27,12 @@
                                         </div>
                                     </div>
 
+                                    <div class="content-footer">
+                                        <div style="float: left;">
+                                            <a class="btn glyphicon glyphicon-remove"
+                                               href="{{ route('articleDelete',['id' => $article->id]) }}"></a>
+                                        </div>
+                                    </div>
 
                                 </aside>
                             </div>
